@@ -17,11 +17,16 @@ python -m venv .venv && source .venv/bin/activate
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
 
+# Génère les ~2 100 images PCB (déterministe, seed 42, ~30 s)
+python scripts/generate_dataset.py
+
 jupyter notebook notebooks/M4-B2_template.ipynb
 ```
 
-> ⚠️ Les ~2 100 images PCB seront fournies par la formatrice jeudi matin
-> (archive ~8 Mo). Place dans `data/pcb_defect_sample/`.
+> 📦 Les ~2 100 images PCB (7 classes, 64×64) sont **générées par
+> `scripts/generate_dataset.py`** dans `data/pcb_defect_sample/`. Synthétiques,
+> déterministes (seed 42) → tout le monde a le même jeu. Git-ignorées (on ne
+> commite pas la donnée, on la régénère).
 
 ---
 
@@ -29,8 +34,10 @@ jupyter notebook notebooks/M4-B2_template.ipynb
 
 ```
 M4-B2-pcb-<binome>/
+├── scripts/
+│   └── generate_dataset.py              # génère les images PCB (seed 42)
 ├── data/                                # gitignored
-│   └── pcb_defect_sample/               # fourni jeudi
+│   └── pcb_defect_sample/               # produit par le script
 │       ├── ok/ open/ short/ ...         # 7 classes
 ├── notebooks/
 │   └── M4-B2_template.ipynb
