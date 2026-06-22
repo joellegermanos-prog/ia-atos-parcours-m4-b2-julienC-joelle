@@ -74,6 +74,49 @@ optimizer = optim.Adam(model.fc.parameters(), lr=1e-3)
 - **Pas de freeze** : tout fine-tuner. Très coûteux, justifié uniquement
   pour gros datasets.
 
+## Exemple minimal qui tourne
+
+On part d'un **ResNet18 pré-entraîné sur ImageNet**, on **gèle** le backbone et
+on remplace juste la **tête** par une couche adaptée à nos 7 classes.
+
+```python
+# torch==2.5.0, torchvision==0.20.0
+import torch
+import torch.nn as nn
+from torchvision import models
+
+model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+
+for param in model.parameters():        # on gèle tout le backbone pré-entraîné
+    param.requires_grad = False
+
+model.fc = nn.Linear(model.fc.in_features, 7)   # nouvelle tête : 512 → 7 classes
+
+trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+frozen = sum(p.numel() for p in model.parameters() if not p.requires_grad)
+print(f"Entraînables : {trainable} | gelés : {frozen}")   # ~3 591 vs ~11 M
+
+dummy = torch.randn(2, 3, 224, 224)     # ResNet attend 3 canaux, 224×224
+print(model(dummy).shape)               # → torch.Size([2, 7])
+```
+
+Tu n'entraînes que ~3 600 poids (la tête) au lieu de 11 millions : c'est tout
+l'intérêt du transfer learning sur un petit dataset.
+
+## Exercice guidé
+
+1. Nos images PCB sont en **niveaux de gris 64×64**, mais ResNet veut du **RGB
+   224×224**. Quelle transformation `torchvision` appliquer ? (indice :
+   `transforms.Grayscale(num_output_channels=3)` + `transforms.Resize(224)`).
+2. Complète `build_resnet18_classifier` dans `src/option_b_transfer.py` et
+   vérifie la sortie `(batch, 7)`.
+3. **Dégèle les 2 derniers blocs** (`layer4` + `fc`) et compare : meilleure
+   précision ? entraînement plus lent ? C'est l'arbitrage *feature extraction*
+   vs *fine-tuning*.
+
+**Attendu** : tu sais adapter une image à l'entrée d'un modèle pré-entraîné et
+expliquer pourquoi geler le backbone suffit souvent sur peu de données.
+
 ## Performance attendue sur PCB
 
 - **Accuracy** : ~85-95 % (souvent meilleur que CNN scratch)

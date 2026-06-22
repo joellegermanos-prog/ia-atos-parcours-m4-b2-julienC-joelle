@@ -75,7 +75,7 @@ PyTorch. »*
 | **Mémoire modèle** | 5 Mo | ~50 Mo | 600 Mo |
 | **Accuracy attendue** | 80 % (mesuré) | 92 % (est., benchmark X) | 50 % (mesuré mini-proto) |
 
-## Verdict type structuré
+## Exemple minimal — verdict type structuré
 
 ```markdown
 **Recommandation** : Transfer learning ResNet-18.
@@ -88,6 +88,23 @@ sur PCB — domaine trop spécifique pour les prompts génériques).
 données labellisées** → CLIP zero-shot accepté malgré la précision moindre.
 ```
 
+## Exercice guidé
+
+Construis le **tableau économique comparatif des 3 approches** (même si tu n'en
+implémentes qu'une) :
+
+1. Une ligne par approche (CNN from scratch / Transfer / CLIP zero-shot).
+2. Colonnes : **coût d'entraînement** (temps + données labellisées nécessaires),
+   **coût d'inférence** (latence, mémoire), **précision estimée**, **maintenance**.
+3. Les chiffres des 2 approches non implémentées peuvent venir des **ordres de
+   grandeur** des mini-cours / de la littérature — **cite ta source**.
+4. Rédige le verdict au format ci-dessus, avec une **condition de changement
+   d'avis** explicite.
+
+**Attendu** : un arbitrage **multi-critères** (pas juste « le plus précis ») qui
+intègre le coût et le contexte client — exactement le geste C4 « choisir un
+modèle adapté ».
+
 ## Pièges fréquents
 
 | Piège | Conséquence |
@@ -97,6 +114,15 @@ données labellisées** → CLIP zero-shot accepté malgré la précision moindr
 | Pas distinguer mesuré / estimé | Tu mens par omission — toujours indiquer le status |
 | Oublier la mémoire / latence | Tableau unidimensionnel inutile |
 | Ne pas mentionner les conditions de changement d'avis | Tu fais l'oracle, pas le consultant |
+
+## Pour aller plus loin
+
+- **MLPerf** (benchmarks de référence coût/perf) : <https://mlcommons.org/benchmarks/>
+- **Green AI** (Schwartz et al., 2019) — le coût énergétique comme critère :
+  <https://arxiv.org/abs/1907.10597>
+- Doc **torch.cuda** / profilage : mesurer mémoire et temps d'inférence proprement.
+- Lien éco-conception : un modèle plus léger (transfer < CNN scratch < gros
+  modèle) = moins de calcul = moins d'empreinte. À mentionner dans le verdict.
 
 ## Vérification
 

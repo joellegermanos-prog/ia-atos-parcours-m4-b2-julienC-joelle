@@ -18,7 +18,7 @@ C'est exactement la situation **télétravail réel** :
 Donc **CT1 (planifier)** et **CT9 (faciliter le travail collectif)** sont
 testées **vraiment** ici.
 
-## 4 règles d'or async
+## Concepts clés — les 4 règles d'or async
 
 ### Règle 1 — Convention de communication explicite
 
@@ -66,7 +66,27 @@ Chaque commit doit avoir un message clair. Le README est mis à jour
 - Tu seras peut-être indispo quand l'autre y arrivera
 - Future-toi te remerciera dans 6 mois quand tu reliras le repo
 
-## Coordination Discord MP — checklist minimum
+## Exemple minimal
+
+Un **commit co-signé** (les deux noms apparaissent dans l'historique GitHub) :
+
+```bash
+git commit -m "feat(transfer): tête resnet18 + gel backbone
+
+Co-authored-by: Prénom2 Nom2 <prenom2@example.com>"
+```
+
+Un **message de relais** Discord en fin de session (l'autre reprend sans toi) :
+
+```
+[handoff 18h] Poussé sur branche feat/transfer :
+- ✅ build_resnet18_classifier OK, sortie (batch, 7) testée
+- ⏳ TODO pour toi : la boucle train_one_epoch (option_b ligne 40)
+- ⚠️ bug connu : le DataLoader plante si num_workers>0 sur mac, mets 0
+Je reprends demain 9h.
+```
+
+## Exercice guidé — coordination Discord MP (checklist minimum)
 
 | Moment | Format | Objectif |
 |---|---|---|

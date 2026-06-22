@@ -96,6 +96,54 @@ Pas de train, mais évaluation **sur le test set** comme les autres
 options. Mesure accuracy macro + matrice de confusion (certaines classes
 seront naturellement mieux gérées par CLIP que d'autres).
 
+## Exemple minimal qui tourne
+
+CLIP classe **sans aucun entraînement** : on lui donne une image et des
+descriptions textuelles, il rend la plus probable. Tout se joue dans les
+**mots du prompt**.
+
+```python
+# transformers==4.46.0
+import torch
+from PIL import Image
+from transformers import CLIPModel, CLIPProcessor
+
+MODEL_ID = "openai/clip-vit-base-patch32"
+processor = CLIPProcessor.from_pretrained(MODEL_ID)   # ~150 Mo, CPU OK
+model = CLIPModel.from_pretrained(MODEL_ID)
+
+image = Image.open("data/pcb_defect_sample/ok/ok_000.png").convert("RGB")
+labels = [
+    "a photo of a clean printed circuit board",
+    "a photo of a circuit board with an open circuit",
+    "a photo of a circuit board with a short circuit",
+]
+inputs = processor(text=labels, images=image, return_tensors="pt", padding=True)
+with torch.no_grad():
+    logits = model(**inputs).logits_per_image     # similarité image ↔ chaque texte
+probs = logits.softmax(dim=1)[0]
+print(labels[int(probs.argmax())], f"({probs.max():.2f})")
+```
+
+Aucun `.fit()`, aucun label d'entraînement : c'est le **zero-shot**. La qualité
+dépend entièrement de la formulation des descriptions.
+
+## Exercice guidé
+
+1. Écris une description (prompt) pour **chacune des 7 classes** PCB.
+2. Teste CLIP sur **5 images** de classes différentes : combien sont bien
+   classées ?
+3. Reformule les prompts des classes ratées (ex. *« copper exposure »* vs
+   *« a circuit board with excess copper »*) — l'**ingénierie de prompt**
+   change-t-elle le résultat ?
+4. Conclus : CLIP est-il meilleur sur les défauts **visuellement évidents**
+   (open/short) ou **subtils** (mousebite/spur) ? Pourquoi ?
+
+**Attendu** : tu mesures qu'un foundation model donne un résultat **immédiat
+sans entraînement**, mais que sa précision sur un domaine technique dépend du
+prompt — l'arbitrage à poser face au CNN/transfer (coût zéro entraînement vs
+précision moindre sur défauts fins).
+
 ## Performance attendue sur PCB
 
 - **Accuracy** : ~30-60 % selon prompts (très variable). PCB étant un
