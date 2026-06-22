@@ -10,6 +10,7 @@
 
 | Tâche | Durée | Mini-cours |
 |---|---|---|
+| 🧭 **Choisir son approche** (à lire **en premier**) | 30 min | [`06_Grille_decision_approche_essentiel.md`](./06_Grille_decision_approche_essentiel.md) |
 | Setup binôme + EDA | 1h30 | [`05_Pair_coding_async_essentiel.md`](./05_Pair_coding_async_essentiel.md) |
 | Implémentation option A | 4h | [`01_CNN_from_scratch_essentiel.md`](./01_CNN_from_scratch_essentiel.md) |
 | Implémentation option B | 4h | [`02_Transfer_learning_essentiel.md`](./02_Transfer_learning_essentiel.md) |
