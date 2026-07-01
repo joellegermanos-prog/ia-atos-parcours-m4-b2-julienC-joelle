@@ -112,7 +112,7 @@ MODEL_ID = "openai/clip-vit-base-patch32"
 processor = CLIPProcessor.from_pretrained(MODEL_ID)   # ~150 Mo, CPU OK
 model = CLIPModel.from_pretrained(MODEL_ID)
 
-image = Image.open("data/pcb_defect_sample/ok/ok_000.png").convert("RGB")
+image = Image.open("data/pcb_defect_sample/ok/ok_0000.png").convert("RGB")
 labels = [
     "a photo of a clean printed circuit board",
     "a photo of a circuit board with an open circuit",

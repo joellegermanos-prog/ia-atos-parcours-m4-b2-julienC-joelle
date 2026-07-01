@@ -47,13 +47,14 @@ M4-B2-pcb-<binome>/
 │   ├── option_b_transfer.py             # ResNet-18 transfer (TODO si choisi)
 │   └── option_c_clip.py                 # CLIP zero-shot (TODO si choisi)
 ├── models/                              # gitignored
-├── ressources/                          # 📚 5 mini-cours
+├── ressources/                          # 📚 6 mini-cours
 │   ├── README.md
 │   ├── 01_CNN_from_scratch_essentiel.md
 │   ├── 02_Transfer_learning_essentiel.md
 │   ├── 03_Zero_shot_CLIP_essentiel.md
 │   ├── 04_Comparaison_economique_essentiel.md
 │   ├── 05_Pair_coding_async_essentiel.md
+│   ├── 06_Grille_decision_approche_essentiel.md
 │   └── liens_officiels.md
 ├── decisions.md                         # binôme — choix + répartition
 ├── economic_comparison.md               # comparatif 3 approches
@@ -66,10 +67,13 @@ M4-B2-pcb-<binome>/
 
 ## 📚 Mini-cours d'appui
 
-5 mini-cours dans [`./ressources/`](./ressources/) — lecture juste-à-temps.
+6 mini-cours dans [`./ressources/`](./ressources/) — lecture juste-à-temps.
+**À lire en premier : `06` (grille de décision) — c'est le cœur du choix
+d'approche que vous devez justifier.**
 
 | Tâche | Mini-cours |
 |---|---|
+| **Choisir l'approche (grille de décision C4)** | [`06_Grille_decision_approche_essentiel.md`](./ressources/06_Grille_decision_approche_essentiel.md) |
 | CNN from scratch (option A) | [`01_CNN_from_scratch_essentiel.md`](./ressources/01_CNN_from_scratch_essentiel.md) |
 | Transfer learning (option B) | [`02_Transfer_learning_essentiel.md`](./ressources/02_Transfer_learning_essentiel.md) |
 | Zero-shot CLIP (option C) | [`03_Zero_shot_CLIP_essentiel.md`](./ressources/03_Zero_shot_CLIP_essentiel.md) |

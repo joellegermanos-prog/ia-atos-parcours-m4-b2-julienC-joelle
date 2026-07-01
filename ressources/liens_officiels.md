@@ -1,6 +1,6 @@
 # Liens officiels — M4-B2
 
-Dernière vérification : 2026-05-26
+Dernière vérification : 2026-07-01
 
 ## PyTorch (options A et B)
 
@@ -24,6 +24,8 @@ Dernière vérification : 2026-05-26
 
 - **Kaggle — PCB Defect Detection** : <https://www.kaggle.com/datasets/akhatova/pcb-defects>
   (référence pour vos estimations de comparaison économique)
+- **DeepPCB (GitHub)** : <https://github.com/tangsanli5201/DeepPCB>
+  (dataset PCB réel + baseline — complément si Kaggle demande une connexion)
 
 ## Articles & livres
 
