@@ -134,6 +134,12 @@ naturelles RGB) **et ton domaine cible** :
 - **Accuracy** : **à MESURER sur ton dataset** — ne la présuppose pas. Le
   résultat peut surprendre (c'est tout l'intérêt de la comparaison C4).
 
+> 🔒 **Verrou** : ni « le transfer gagne toujours », ni « le transfer est nul »
+> ne sont vrais. **Aucune approche n'est universellement meilleure** — le
+> classement dépend du **contexte** (proximité de domaine, gel vs fine-tuning,
+> volume de données, budget). Un mauvais score en transfer **gelé** signifie
+> « inadapté **à ce domaine sans adaptation** », pas « transfer inutile ».
+
 ## Pièges fréquents
 
 | Piège | Conséquence |
