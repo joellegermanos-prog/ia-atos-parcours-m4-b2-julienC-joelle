@@ -117,11 +117,22 @@ l'intérêt du transfer learning sur un petit dataset.
 **Attendu** : tu sais adapter une image à l'entrée d'un modèle pré-entraîné et
 expliquer pourquoi geler le backbone suffit souvent sur peu de données.
 
-## Performance attendue sur PCB
+## Performance : ça dépend du domaine (mesure, ne présuppose pas)
 
-- **Accuracy** : ~85-95 % (souvent meilleur que CNN scratch)
-- **Temps train CPU** : ~3-5 min sur 3-5 epochs (vs 10-15 min CNN scratch)
-- **Mémoire** : ~50 Mo (ResNet-18)
+Le transfer learning **n'est pas une garantie de performance**. Il dépend
+surtout de l'**alignement entre le domaine d'origine** (ImageNet = photos
+naturelles RGB) **et ton domaine cible** :
+- domaine **proche** d'ImageNet → le transfer domine souvent le CNN scratch ;
+- domaine **éloigné** (images abstraites, synthétiques, très hors-distribution)
+  → le backbone **gelé** peut au contraire **sous-performer** un simple CNN
+  entraîné sur tes données. C'est le **negative transfer** : le pré-entraînement
+  *dégrade* au lieu d'aider. Le **fine-tuning** (dé-gel) peut alors le rattraper,
+  au prix du temps de calcul.
+
+- **Temps train CPU** : ~3-5 min (5 epochs, gelé) — plus lourd que le CNN scratch
+- **Mémoire** : ~45 Mo (ResNet-18)
+- **Accuracy** : **à MESURER sur ton dataset** — ne la présuppose pas. Le
+  résultat peut surprendre (c'est tout l'intérêt de la comparaison C4).
 
 ## Pièges fréquents
 
