@@ -23,7 +23,7 @@ python scripts/generate_dataset.py
 jupyter notebook notebooks/M4-B2_template.ipynb
 ```
 
-> 📦 Les ~2 100 images PCB (7 classes, 64×64) sont **générées par
+> 📦 Les ~2 100 images PCB (7 classes = 6 défauts + 1 OK, 64×64) sont **générées par
 > `scripts/generate_dataset.py`** dans `data/pcb_defect_sample/`. Synthétiques,
 > déterministes (seed 42) → tout le monde a le même jeu. Git-ignorées (on ne
 > commite pas la donnée, on la régénère).
@@ -98,6 +98,16 @@ d'approche que vous devez justifier.**
 7. **Finition + test croisé du repo** (~30 min)
 
 → Compétences visées : **C1 — adapter** renforcé + **C4 — adapter** renforcé.
+
+### ⭐ Extensions optionnelles (« cas client avancé »)
+
+> Non notées (bonus qualitatif). **Seulement si le socle est bouclé.** Les 3
+> approches restent imposées — c'est la **façon de les implémenter** qui s'ouvre.
+> Toute décision ⭐ se justifie dans `decisions.md`.
+
+- ⭐ **CNN** : conçois ton archi (≥ 2 conv + 1 pooling) et **justifie le flatten**.
+- ⭐ **Transfer** : choisis ton backbone (ResNet18 / MobileNet / EfficientNet) et justifie.
+- ⭐ **CLIP** : prompts libres + explique ta stratégie de prompt engineering.
 
 ---
 

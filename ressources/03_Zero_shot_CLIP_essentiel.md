@@ -29,6 +29,13 @@ entraînement.**
 **Sur PCB Defect** : intéressant comme **baseline ultra-rapide à monter**,
 mais probablement **dominé** en précision par transfer learning.
 
+> ⚠️ **À interpréter avec nuance** : un CLIP faible ici **ne veut pas dire
+> « CLIP est mauvais »**. C'est un **baseline sémantique** entraîné sur des
+> images « du web », pas sur des cartes PCB 64×64 — il n'est **pas adapté à ce
+> domaine sans adaptation** (prompts soignés, voire fine-tuning). Le bon message
+> de ton verdict : *« CLIP n'est pas le bon outil **pour ce cas précis** »*, pas
+> *« CLIP est nul »*. **Aucune des 3 approches n'est universellement meilleure.**
+
 ## Concepts clés
 
 ### Workflow

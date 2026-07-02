@@ -8,6 +8,9 @@
 - **Option implémentée** : mesures **réelles** sur train + inférence
 - **2 options non implémentées** : estimations argumentées via sources
   publiques (benchmarks PCB Defect, doc HuggingFace, articles cités)
+- ⚠️ **Ordres de grandeur uniquement** : latence, temps d'entraînement et coût
+  dépendent fortement du **hardware** (CPU/GPU, RAM, machine). On compare des
+  **échelles relatives**, pas des vérités absolues.
 
 ## Tableau
 

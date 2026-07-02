@@ -70,7 +70,11 @@ def get_dataloaders(
 ) -> tuple[DataLoader, DataLoader, DataLoader]:
     """Returns (train_loader, val_loader, test_loader).
 
-    Splits stratifiés par classe via torch.utils.data.random_split.
+    Split **aléatoire mais reproductible** (generator seedé). ⚠️ `random_split`
+    n'est **pas** stratifié — acceptable ici car le dataset est **équilibré**
+    (300 images/classe) → les splits sont ≈ équilibrés. Pense aussi à fixer
+    `torch.manual_seed(seed)` avant l'entraînement pour que la comparaison
+    entre binômes soit reproductible.
     """
     dataset = PCBDefectDataset(root, transform=get_default_transforms())
 
