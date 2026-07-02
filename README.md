@@ -108,6 +108,7 @@ d'approche que vous devez justifier.**
 - ⭐ **CNN** : conçois ton archi (≥ 2 conv + 1 pooling) et **justifie le flatten**.
 - ⭐ **Transfer** : choisis ton backbone (ResNet18 / MobileNet / EfficientNet) et justifie.
 - ⭐ **CLIP** : prompts libres + explique ta stratégie de prompt engineering.
+- ⭐ **Sensibilité au dataset** : change 1-2 paramètres du générateur (bruit dans `augment`, taille/contraste des défauts dans `apply_defect`), régénère, observe comment tes 3 chiffres bougent → les perfs dépendent de la **distribution des données**, pas que du modèle. Aucun résultat imposé ; ne touche pas au dataset figé de ton verdict principal.
 
 ---
 
