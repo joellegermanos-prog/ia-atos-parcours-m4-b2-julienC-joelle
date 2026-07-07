@@ -1,7 +1,7 @@
 # Décisions du binôme — M4-B2 (PCB Defect)
 
 > À compléter à 2 dès la coordination kick-off jeudi matin.
-> Servira de référence en RDV vendredi + restitution duo lundi M5.
+> Servira de référence en RDV vendredi + restitution duo mardi 1ᵉʳ sept (rentrée M5).
 
 ## 1. Option choisie pour l'implémentation
 
@@ -36,7 +36,7 @@
 - Convention : `<prénom>/<feature>` (ex. `alice/option-b`, `bob/comparatif`)
 - Merge sur `main` après revue MP
 
-## 5. Restitution duo lundi M5
+## 5. Restitution duo mardi 1ᵉʳ sept (rentrée M5)
 
 - **Membre 1** présente : (démo technique 3 min)
 - **Membre 2** présente : (argumentation économique 2 min)

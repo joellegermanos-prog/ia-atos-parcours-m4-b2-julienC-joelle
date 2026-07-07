@@ -95,7 +95,7 @@ Je reprends demain 9h.
 | **Jeudi 18h** | « Bilan jour 1 : X, Y faits. Demain je fais Z. » | Préparation J2 |
 | **Vendredi 9h** | « Plan finale : tests croisés à 11h ? » | Plan J2 |
 | **Vendredi 11h** | « **Test croisé** : je clone ton repo. » | Validation |
-| **Vendredi 12h** | « Tag posé, commit final, lundi M5 on présente. » | Clôture |
+| **Vendredi 12h** | « Tag posé, commit final, mardi 1ᵉʳ sept (rentrée M5) on présente. » | Clôture |
 
 ## Pièges fréquents
 
@@ -103,11 +103,11 @@ Je reprends demain 9h.
 |---|---|
 | Pas de check-in matin | Vous travaillez parallèle sans savoir | Désynchro à 18h |
 | Pas de PR — push direct sur main | Conflits qui passent inaperçus, écrasements |
-| Test croisé sauté | Repo qui marche chez 1, pas chez l'autre — restitution lundi M5 honteuse |
+| Test croisé sauté | Repo qui marche chez 1, pas chez l'autre — restitution de rentrée honteuse |
 | Tâches pas équitablement réparties | CT9 ratée, frustration |
 | Silence > 4 h sans signaler | L'autre s'inquiète, perd du temps |
 
-## Format restitution duo lundi M5
+## Format restitution duo mardi 1ᵉʳ sept (rentrée M5)
 
 10 min par binôme :
 - **Démo technique** (Membre 1, 3 min) : démarrage du repo, accuracy obtenue
@@ -115,8 +115,9 @@ Je reprends demain 9h.
   l'option implémentée, recommandation finale
 - **Discussion** (5 min) : questions de la promo + Marianne
 
-**Préparation lundi 9h** : rejouez la démo une fois ensemble (MP Discord
-si déjà en sync, sinon chacun teste sa partie). **Pas d'improvisation**.
+**Préparation la veille de la rentrée (lundi 31 août)** : rejouez la démo une
+fois ensemble (MP Discord) — 7 semaines auront passé depuis juillet, votre repo
+doit re-cloner et re-tourner. **Pas d'improvisation**.
 
 ## Pour aller plus loin
 
@@ -130,4 +131,4 @@ si déjà en sync, sinon chacun teste sa partie). **Pas d'improvisation**.
 - [ ] PR (ou commits clairs) pour chaque feature
 - [ ] **Test croisé** réalisé vendredi 11h
 - [ ] ≥ 3 messages MP Discord par jour (kick-off + midi + soir)
-- [ ] Restitution duo répétée avant lundi M5
+- [ ] Restitution duo répétée avant mardi 1ᵉʳ sept (rentrée M5)

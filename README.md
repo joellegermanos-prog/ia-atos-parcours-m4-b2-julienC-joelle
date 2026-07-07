@@ -12,10 +12,19 @@ git clone git@github.com:<owner>/M4-B2-pcb-<binome>.git
 cd M4-B2-pcb-<binome>
 
 python -m venv .venv && source .venv/bin/activate
+# (variante uv : uv venv .venv && source .venv/bin/activate)
 
 # ⚠️ PyTorch CPU pèse ~200 Mo
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
+# (variante uv : uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#                uv pip install -r requirements.txt)
+```
+
+> 🛠️ **Dépannage** : `No module named pip` après `uv venv` → utiliser `uv pip install …`
+> (un venv créé par uv n'embarque pas pip).
+
+```bash
 
 # Génère les ~2 100 images PCB (déterministe, seed 42, ~30 s)
 python scripts/generate_dataset.py

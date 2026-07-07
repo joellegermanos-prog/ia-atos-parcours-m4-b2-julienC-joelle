@@ -2,7 +2,7 @@
 
 > Brief associé : **M4-B2**.
 > Mode : binôme **choisi** par affinité, **100 % asynchrone** (0 h sync).
-> Restitution duo **lundi M5**.
+> Restitution duo **mardi 1ᵉʳ sept (rentrée M5)**.
 
 ---
 
@@ -28,7 +28,7 @@
 - Comparaison économique 3 approches (1 mesuré + 2 estimés avec sources)
 - Verdict 8 lignes max chiffré
 - Décisions binôme tracées (`decisions.md`)
-- Restitution duo préparée pour lundi M5
+- Restitution duo préparée pour mardi 1ᵉʳ sept (rentrée M5)
 
 → Compétences : **C1 adapter renforcé** + **C4 adapter renforcé**.
 
