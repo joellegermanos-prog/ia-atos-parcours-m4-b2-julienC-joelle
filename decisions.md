@@ -8,12 +8,10 @@
 > Une seule option implémentée jusqu'à l'inférence. Les 2 autres sont
 > estimées (mini-prototypes + sources publiques).
 
-**Choix** : ☐ Option A (CNN scratch) ☐ Option B (Transfer learning) ☐ Option C (Zero-shot CLIP)
+**Choix** : ☑ Option A (CNN scratch) ☐ Option B (Transfer learning) ☐ Option C (Zero-shot CLIP)
 
 **Argument** :
-- ...
-- ...
-- ...
+- Privilégier l'approche didactique
 
 ## 2. Répartition des tâches binôme
 
@@ -50,4 +48,5 @@
 
 ---
 
-*Décisions tracées par le binôme `<prénom1>` × `<prénom2>` — `<date>`.*
+*Décisions tracées par le binôme `<
+Joelle` × `JulienC` — `08/07/2026`.*
